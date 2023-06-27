@@ -3,17 +3,21 @@
     <head>
         <title>Efekt Stu Mostów</title>
         <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/css/efekt.min.css">
     </head>
     <body>
         <div class="container">
             <div class="row efekt-row" data-row="header">
-                <div class="col-lg-4">
+                <div class="col-lg-auto">
                     <a href="javascript:void(0)">
                         <img src="images/logo-color.svg" alt="efekt stu mostów">
                     </a>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-auto">
                     <nav>
                         <ul class="efekt-menu">
                             <li>
@@ -36,10 +40,10 @@
                 <div class="col">
                     <h1 class="efekt-h1">Efekt Stu Mostów</h1>
                     <p class="efekt-p">8-10 września 2023 | Hotel Wyndham, Wrocław</p>
-                    <a class="efekt-a" href="javascript:void(0)">Kup bilet</a>
+                    <a class="efekt-button" href="javascript:void(0)">Kup bilet</a>
                 </div>
             </div>
-            <div class="row efekt-row" data-row="front-page-time">
+            <div class="row efekt-row" data-row="front-page-timer">
                 <div class="col">
                     <h2 class="efekt-h2">Do Efektu zostało:</h2>
                     <div class="efekt-timer">
@@ -47,14 +51,17 @@
                             <span>02</span>
                             Dni
                         </div>
+                        :
                         <div>
                             <span>13</span>
                             Godziny
                         </div>
+                        :
                         <div>
                             <span>15</span>
                             Sekundy
                         </div>
+                        :
                         <div>
                             <span>49</span>
                             Minuty

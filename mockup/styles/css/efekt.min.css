@@ -1,0 +1,17 @@
+/* Error: 45px and 0.625rem have incompatible units.
+ *     ,
+ * 132 |             margin: 1.25rem 0 0 $weird-offset + .625rem;
+ *     |                                 ^^^^^^^^^^^^^^^^^^^^^^^
+ *     '
+ *   scss/efekt.scss 132:33  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: 45px and 0.625rem have incompatible units.\a     \2577 \a 132 \2502              margin: 1.25rem 0 0 $weird-offset + .625rem;\d\a     \2502                                  ^^^^^^^^^^^^^^^^^^^^^^^\a     \2575 \a   scss/efekt.scss 132:33  root stylesheet";
+}
