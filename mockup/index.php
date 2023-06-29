@@ -1,3 +1,4 @@
+<?php require_once 'functions.php'; ?>
 <!DOCTYPE html>
 <html lang="pl">
     <head>
@@ -14,7 +15,7 @@
             <div class="row efekt-row" data-row="header">
                 <div class="col-lg-auto">
                     <a href="javascript:void(0)">
-                        <img src="images/logo-color.svg" alt="efekt stu mostów">
+                        <?= get_svg( 'images/logo-color' ); ?>
                     </a>
                 </div>
                 <div class="col-lg-auto">
@@ -73,25 +74,33 @@
                 <div class="col">
                     <ul class="efekt-numbers">
                         <li>
-                            <img src="icons/people.svg">
-                            <strong>150</strong>
-                            <span>Uczestników</span>
+                            <?= get_svg( 'icons/people' ); ?>
+                            <div>
+                                <strong>150</strong>
+                                Uczestników
+                            </div>
                         </li>
                         <li>
-                            <img src="icons/megaphone.svg">
-                            <strong>15</strong>
-                            <span>Prelegentów</span>
+                            <?= get_svg( 'icons/megaphone' ); ?>
+                            <div>
+                                <strong>15</strong>
+                                Prelegentów
+                            </div>
                         </li>
                         <li>
-                            <img src="icons/clock.svg">
-                            <strong>3</strong>
-                            <span>Dni konferencji</span>
+                            <?= get_svg( 'icons/clock' ); ?>
+                            <div>
+                                <strong>3</strong>
+                                Dni konferencji
+                            </div>
                         </li>
                         <li>
-                            <img src="icons/trophy.svg">
-                            <strong>2</strong>
-                            <span>Konkursy na poziomie Mistrzostw Polski</span>
-                            <img src="icons/trophy.svg">
+                            <?= $trophy = get_svg( 'icons/trophy' ); ?>
+                            <div>
+                                <strong>2</strong>
+                                Konkursy na poziomie Mistrzostw Polski
+                            </div>
+                            <?= $trophy; ?>
                         </li>
                     </ul>
                 </div>

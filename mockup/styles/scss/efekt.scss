@@ -2,7 +2,7 @@
 @use 'colors';
 @use 'fonts';
 
-$weird-offset: 45px; 
+$weird-offset: math.div(45, 16) * 1rem;
 
 * {
     box-sizing: border-box;
@@ -13,11 +13,11 @@ html {
 }
 
 body {
-    font-family: fonts.$montserrat;  
-    color: colors.$black;
+    font-family: fonts.$montserrat;
+    color: colors.$navy;
 }
 
-img {
+img, svg {
     display: block;
     margin: 0 auto;
 }
@@ -29,8 +29,7 @@ img {
         border-radius: 3.125rem;
         font-size: 1.25rem;
         color: colors.$white;
-        background: linear-gradient(142deg, colors.$violet 0%, colors.$rose 45.61%, colors.$dogwood 100%);
-        background: linear-gradient(142deg, #643f69 0%, #93597e 100%);
+        background: linear-gradient(142deg, colors.$violet-english 0%, colors.$violet-chinese 100%);
         text-transform: uppercase;
         font-weight: fonts.$bold;
         text-decoration: none;
@@ -43,7 +42,7 @@ img {
 
     &-h1 {
         color: colors.$magenta;
-        font-size: 500;
+        font-weight: fonts.$medium;
 
         @at-root [data-row="front-page-intro"] #{&} {
             margin: 0 0 1rem $weird-offset;
@@ -53,10 +52,13 @@ img {
     }
 
     &-h2 {
-        color: colors.$eggplant;
+        color: colors.$navy;
+        font-weight: fonts.$bold;
+        font-size: 2.5rem;
 
         @at-root [data-row="front-page-timer"] #{&} {
             margin-left: $weird-offset;
+            font-weight: fonts.$regular;
             color: colors.$eggplant;
             font-size: 2rem;
         }
@@ -85,6 +87,52 @@ img {
         }
     }
 
+    &-numbers {
+        @at-root ul#{&} {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+        display: grid;
+        grid-template:  repeat(2, auto) / repeat(3, 1fr);
+        grid-gap: 1.875rem;
+        place-content: center;
+
+        li {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-radius: .9375rem;
+            background: rgba(colors.$flash, 0.70);
+            backdrop-filter: blur(.25rem);
+            box-shadow: 0 .1875rem .375rem 0 rgba(colors.$black, .23), 0 .1875rem .375rem 0 rgba(colors.$black, .16);
+            padding: 1.25rem;
+
+            div {
+                line-height: 1;
+                font-size: 1.25rem;
+                text-align: center;
+
+                strong {
+                    font-size: 2.5rem;
+                    font-weight: fonts.$bold;
+                    margin: .25em 0 .125em;
+                    display: block;
+                }
+            }
+
+            &:nth-child(4) {
+                grid-column: span 3;
+                flex-direction: row;
+            }
+        }
+
+        svg {
+            height: 3rem;
+        }
+    }
+
     &-p {
         font-size: 1.5rem;
         line-height: math.div(33.6, 24);
@@ -101,7 +149,7 @@ img {
             margin-top: 1.83rem;
             justify-content: space-between;
 
-            img {
+            svg {
                 width: 14.375rem;
             }
         }
@@ -113,6 +161,16 @@ img {
 
         &[data-row="front-page-timer"] {
             margin-top: 5rem;
+            text-align: center;
+        }
+
+        &[data-row="front-page-numbers"] {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        &[data-row="front-page-about-us"] {
+            margin-top: 8.5rem;
             text-align: center;
         }
     }
@@ -148,6 +206,18 @@ img {
                 border-radius: 50%;
                 text-align: center;
                 margin-bottom: .25rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .efekt {
+        &-numbers {
+            @at-root [data-row="front-page-numbers"] #{&} {
+                max-width: 50.75rem;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
