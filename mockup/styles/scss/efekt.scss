@@ -55,12 +55,32 @@ img, svg {
         color: colors.$navy;
         font-weight: fonts.$bold;
         font-size: 2.5rem;
+        display: inline-block;
+
+        &::after {
+            content: '';
+            display: block;
+            width: calc(100% + 2.5rem);
+            margin-left: -1.25rem;
+            height: 1px;
+            background: colors.$magenta;
+        }
 
         @at-root [data-row="front-page-timer"] #{&} {
             margin-left: $weird-offset;
             font-weight: fonts.$regular;
             color: colors.$eggplant;
             font-size: 2rem;
+
+            &::before {
+                display: none;
+            }
+        }
+
+
+
+        @at-root [data-row="front-page-about-us"] #{&} {
+            margin-bottom: 1.125em;
         }
     }
 
@@ -142,6 +162,30 @@ img, svg {
             font-size: 2rem;
             color: colors.$eggplant;
         }
+
+        @at-root [data-row="front-page-about-us"] #{&} {
+            font-family: fonts.$hind;
+            font-size: 1.25rem;
+            margin-bottom: 1.45em;
+
+            &:nth-of-type(3),
+            &:last-of-type {
+                font-weight: fonts.$bold;
+            }
+
+            &:last-of-type {
+                font-size: 1.5rem;
+            }
+        }
+
+        @at-root [data-row="front-page-quote"] #{&} {
+            &:first-child {
+                font-style: italic;
+                font-size: 1.5rem;
+                font-weight: fonts.$light;
+                color: colors.$flash;
+            }
+        }
     }
 
     &-row {
@@ -171,6 +215,13 @@ img, svg {
 
         &[data-row="front-page-about-us"] {
             margin-top: 8.5rem;
+            text-align: center;
+        }
+
+        &[data-row="front-page-quote"] {
+            margin-top: 9.375rem;
+            background: colors.$magenta;
+            color: colors.$white;
             text-align: center;
         }
     }
@@ -216,6 +267,14 @@ img, svg {
         &-numbers {
             @at-root [data-row="front-page-numbers"] #{&} {
                 max-width: 50.75rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        &-p {
+            @at-root [data-row="front-page-about-us"] #{&} {
+                max-width: 65rem;
                 margin-left: auto;
                 margin-right: auto;
             }

@@ -112,9 +112,7 @@
                     <p class="efekt-p">Brzmi jak raj?</p>
                     <p class="efekt-p">Tak, i&nbsp;do tego na wyciągnięcie ręki!</p>
                     <p class="efekt-p">Organizacja Toastmasters oferuje skuteczny rozwój kompetencji miękkich. Od lat szkolimy mówców oraz liderów, którzy później osiągają sukcesy w&nbsp;pracy, biznesie czy swoich lokalnych społecznościach.</p>
-                    <p class="efekt-p">Chciałbyś przemawiać, jednak paraliżuje Cię strach przed wystąpieniami publicznymi?</p>
-                    <p class="efekt-p">Chciałbyś rozwinąć swoją karierę zawodową, ale brakuje Ci pewności siebie?</p>
-                    <p class="efekt-p">Chciałbyś budować wspaniale relacje z&nbsp;ludźmi, jednak nie wiesz jak się swobodnie komunikować?</p>
+                    <p class="efekt-p">Chciałbyś przemawiać, jednak paraliżuje Cię strach przed wystąpieniami publicznymi?<br>Chciałbyś rozwinąć swoją karierę zawodową, ale brakuje Ci pewności siebie?<br>Chciałbyś budować wspaniale relacje z&nbsp;ludźmi, jednak nie wiesz jak się swobodnie komunikować?</p>
                     <p class="efekt-p">Wszystkie te problemy możesz rozwiązać, uczęszczając na spotkania Toastmasters. Dostaniesz solidną pigułkę wiedzy oraz przestrzeń do treningu i&nbsp;rozwoju!</p>
                     <p class="efekt-p">Kluby Toastmasters rozsiane są po całej Polsce, więc istnieje prawdopodobieństwo, że jeden z&nbsp;nich jest Twoim mieście.</p>
                     <p class="efekt-p">Społeczność Toastmasters to grupa osób nastawionych na rozwój, edukację i&nbsp;dobrą zabawę. Poznasz wielu ciekawych ludzi reprezentujących różne branże. Będziesz mieć szansę na zdobycie cennych kontaktów.</p>
@@ -123,7 +121,7 @@
             </div>
             <div class="row efekt-row" data-row="front-page-quote">
                 <div class="col">
-                    <p class="efekt-p">„Rozwój osobisty to niekończący się proces samodoskonalenia” powiedział niegdyś Zig Ziglar.</p>
+                    <p class="efekt-p">„Rozwój osobisty to niekończący się proces samodoskonalenia”<br> powiedział niegdyś Zig Ziglar.</p>
                     <p class="efekt-p">Z nieukrywaną radością chcemy zaprosić Cię na wydarzenie, które będzie dla Ciebie POTĘŻNYM bodźcem do dalszego samodoskonalenia i&nbsp;jednocześnie wspaniałym przeżyciem, które po latach będziesz wspominać z&nbsp;uśmiechem!</p>
                     <p class="efekt-p">EFEKT STU MOSTÓW</p>
                     <p class="efekt-p">Już we wrześniu (8-10) odbędzie się wyczekiwana przez wszystkich Toastmasterów konferencja EFEKT TOASTMASTERS. Tym razem ugościmy Was w&nbsp;mieście stu mostów, malowniczym Wrocławiu. Wrocław nazywany jest miastem spotkań, ze względu na gościnną atmosferę oraz niepowtarzalny klimat. Nie może Cię więc zabraknąć.</p>
