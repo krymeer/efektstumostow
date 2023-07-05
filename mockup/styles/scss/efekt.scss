@@ -35,7 +35,7 @@ img, svg {
         text-decoration: none;
         letter-spacing: .0625rem;
 
-        @at-root [data-row="front-page-intro"] #{&} {
+        @at-root .efekt-row[data-row="front-page-intro"] #{&} {
             margin-left: $weird-offset;
         }
     }
@@ -44,7 +44,7 @@ img, svg {
         color: colors.$magenta;
         font-weight: fonts.$medium;
 
-        @at-root [data-row="front-page-intro"] #{&} {
+        @at-root .efekt-row[data-row="front-page-intro"] #{&} {
             margin: 0 0 1rem $weird-offset;
             font-size: 5rem;
             line-height: math.div(9, 8);
@@ -66,7 +66,7 @@ img, svg {
             background: colors.$magenta;
         }
 
-        @at-root [data-row="front-page-timer"] #{&} {
+        @at-root .efekt-row[data-row="front-page-timer"] #{&} {
             margin-left: $weird-offset;
             font-weight: fonts.$regular;
             color: colors.$eggplant;
@@ -77,10 +77,12 @@ img, svg {
             }
         }
 
-
-
-        @at-root [data-row="front-page-about-us"] #{&} {
+        @at-root .efekt-row[data-row="front-page-about-us"] #{&} {
             margin-bottom: 1.125em;
+        }
+
+        @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
+            color: colors.$flash;
         }
     }
 
@@ -93,7 +95,7 @@ img, svg {
         margin-bottom: 0;
 
 
-        @at-root [data-row="header"] #{&} {
+        @at-root .efekt-row[data-row="header"] #{&} {
             margin-right: 8.875rem;
             margin-top: .5rem;
         }
@@ -157,13 +159,13 @@ img, svg {
         font-size: 1.5rem;
         line-height: math.div(33.6, 24);
 
-        @at-root [data-row="front-page-intro"] #{&} {
+        @at-root .efekt-row[data-row="front-page-intro"] #{&} {
             margin: 0 0 4.75rem $weird-offset;
             font-size: 2rem;
             color: colors.$eggplant;
         }
 
-        @at-root [data-row="front-page-about-us"] #{&} {
+        @at-root .efekt-row[data-row="front-page-about-us"] #{&} {
             font-family: fonts.$hind;
             font-size: 1.25rem;
             margin-bottom: 1.45em;
@@ -178,12 +180,56 @@ img, svg {
             }
         }
 
-        @at-root [data-row="front-page-quote"] #{&} {
+        @at-root .efekt-row[data-row="front-page-quote"] #{&} {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: colors.$flash;
+
             &:first-child {
-                font-style: italic;
                 font-size: 1.5rem;
-                font-weight: fonts.$light;
-                color: colors.$flash;
+                font-weight: fonts.$extralight;
+                line-height: 1.15;
+
+                span {
+                    font-style: italic;
+                    display: block;
+                }
+            }
+
+            &:nth-child(n+2) {
+            }
+
+            &:nth-child(2),
+            &:nth-child(4) {
+                font-family: fonts.$hind;
+                font-size: 1.25rem;
+                line-height: 1.6;
+
+                span {
+                    font-weight: fonts.$medium;
+                    text-transform: uppercase;
+                }
+            }
+
+            &:nth-child(2) {
+                margin-top: 4.625em;
+            }
+
+            &:nth-child(3) {
+                font-weight: fonts.$bold;
+                font-size: 1.75rem;
+                margin-top: 1.875em;
+            }
+
+            &:nth-child(4) {
+                line-height: 1.6;
+                margin-top: 1em;
+            }
+
+            &:nth-child(5) {
+                margin-top: 1em;
+                font-size: 1.5rem;
+                font-weight: fonts.$extralight;
             }
         }
     }
@@ -218,11 +264,35 @@ img, svg {
             text-align: center;
         }
 
-        &[data-row="front-page-quote"] {
-            margin-top: 9.375rem;
-            background: colors.$magenta;
+        &[data-row="front-page-quote"],
+        &[data-row="front-page-benefits"] {
             color: colors.$white;
             text-align: center;
+            position: relative;
+
+            &::before {
+                width: 100vw;
+                height: 100%;
+                background: colors.$magenta;
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: calc((100% - 100vw) / 2);
+                z-index: -1;
+
+            }
+        }
+
+        &[data-row="front-page-quote"] {
+            margin-top: 1.875rem;
+
+            &::before {
+                background-image: url('../../images/wave-top.svg');
+                background-position: center -1px;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
         }
     }
 
@@ -237,7 +307,7 @@ img, svg {
         color: colors.$magenta;
         font-weight: fonts.$bold;
 
-        @at-root [data-row="front-page-timer"] #{&} {
+        @at-root .efekt-row[data-row="front-page-timer"] #{&} {
             margin: 1.25rem 0 0 $weird-offset + .625rem;
         }
 
@@ -260,12 +330,22 @@ img, svg {
             }
         }
     }
+
+    &-wrapper {
+        overflow-x: hidden;
+    }
+}
+
+.col {
+    @at-root .efekt-row[data-row="front-page-quote"] #{&} {
+        padding-top: 7.5rem;
+    }
 }
 
 @media (min-width: 992px) {
     .efekt {
         &-numbers {
-            @at-root [data-row="front-page-numbers"] #{&} {
+            @at-root .efekt-row[data-row="front-page-numbers"] #{&} {
                 max-width: 50.75rem;
                 margin-left: auto;
                 margin-right: auto;
@@ -273,10 +353,19 @@ img, svg {
         }
 
         &-p {
-            @at-root [data-row="front-page-about-us"] #{&} {
+            @at-root .efekt-row[data-row="front-page-about-us"] #{&},
+            .efekt-row[data-row="front-page-quote"] #{&} {
                 max-width: 65rem;
                 margin-left: auto;
                 margin-right: auto;
+            }
+
+            @at-root .efekt-row[data-row="front-page-quote"] #{&} {
+                max-width: 72rem;
+
+                &:nth-child(4) {
+                    max-width: 66rem;
+                }
             }
         }
     }
