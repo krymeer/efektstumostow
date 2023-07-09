@@ -1,6 +1,7 @@
 @use 'sass:math';
 @use 'colors';
 @use 'fonts';
+@use 'mixins';
 
 $weird-offset: math.div(45, 16) * 1rem;
 
@@ -81,12 +82,21 @@ img, svg {
             margin-bottom: 1.125em;
         }
 
-        @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
+        @at-root .efekt-row[data-row="front-page-benefits"] #{&},
+        .efekt-row[data-row="front-page-agenda"] #{&} {
             color: colors.$flash;
 
             &::after {
                 margin-top: .25rem;
                 background: colors.$flash;
+            }
+        }
+
+        @at-root .efekt-row[data-row="front-page-speakers"] #{&} {
+            margin-bottom: 2.175em;
+
+            &::after {
+                margin-top: .25rem;
             }
         }
     }
@@ -96,10 +106,32 @@ img, svg {
         font-weight: fonts.$bold;
         font-size: 1.75rem;
 
-        @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
+        @at-root .efekt-row[data-row="front-page-benefits"] #{&},
+        .efekt-row[data-row="front-page-agenda"] #{&} {
             color: colors.$flash;
             margin-top: .8em;
             margin-bottom: 1.1em;
+        }
+
+        @at-root .efekt-speakers #{&} {
+            color: colors.$magenta;
+            font-size: 2.5rem;
+            font-weight: fonts.$medium;
+            margin: .8em 0 .5em;
+        }
+
+        &:not(:first-of-type) {
+            @at-root .efekt-row[data-row="front-page-agenda"] #{&} {
+                &::before {
+                    content: '';
+                    display: block;
+                    width: calc(100% + 3rem);
+                    margin-left: -1.5rem;
+                    height: 1px;
+                    background: colors.$white;
+                    margin-bottom: 1em;
+                }
+            }
         }
     }
 
@@ -247,12 +279,18 @@ img, svg {
             }
         }
 
-        @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
+        @at-root .efekt-row[data-row="front-page-benefits"] #{&},
+        .efekt-row[data-row="front-page-agenda"] #{&} {
             font-family: fonts.$hind;
             font-size: 1.25rem;
             line-height: 1.6;
             margin-bottom: 2.25em;
+        }
 
+        @at-root .efekt-row[data-row="front-page-agenda"] #{&} {
+        }
+
+        @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
             &:last-child {
                 font-size: 1.75rem;
                 font-family: fonts.$montserrat;
@@ -260,6 +298,12 @@ img, svg {
                 line-height: 1.25;
                 margin-top: 2.75em;
             }
+        }
+
+        @at-root .efekt-speakers #{&} {
+            font-family: fonts.$hind;
+            font-size: 1.25rem;
+            line-height: 1.5875;
         }
     }
 
@@ -294,35 +338,34 @@ img, svg {
         }
 
         &[data-row="front-page-quote"],
-        &[data-row="front-page-benefits"] {
+        &[data-row="front-page-benefits"],
+        &[data-row="front-page-agenda"] {
             color: colors.$white;
             text-align: center;
             position: relative;
 
             &::before {
-                width: 100vw;
-                height: 100%;
-                background: colors.$magenta;
-                content: '';
-                display: block;
-                position: absolute;
-                top: 0;
-                left: calc((100% - 100vw) / 2);
-                z-index: -1;
-                background-position-x: center;
-                background-repeat: no-repeat;
-                background-size: contain;
+                @include mixins.wave;
+            }
+        }
+
+        &[data-row="front-page-agenda"] {
+            &::after {
+                @include mixins.wave;
+                height: 50%;
+                bottom: 0;
+                top: auto;
+                background-image: url('../../images/wave-bottom.svg');
+                background-position-y: calc(100% + 2px);
             }
         }
 
         &[data-row="front-page-quote"] {
             margin-top: 1.875rem;
+        }
 
-            &::before {
-                background-image: url('../../images/wave-top.svg');
-                background-position-y: -1px;
-
-            }
+        &[data-row="front-page-agenda"] {
+            margin-top: 2.5rem;
         }
 
         &[data-row="front-page-benefits"] {
@@ -331,6 +374,32 @@ img, svg {
             &::before {
                 background-image: url('../../images/wave-bottom.svg');
                 background-position-y: calc(100% + 1px);
+            }
+        }
+
+        &[data-row="front-page-speakers"] {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+    }
+
+    &-speakers {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3.625rem 4.875rem;
+        text-align: center;
+        margin-bottom: 0;
+        padding-left: 0;
+        margin-left: .25 * $weird-offset;
+        margin-right: -.25 * $weird-offset;
+        list-style: none;
+
+        li {
+            div {
+                border-radius: 1.5625rem;
+                border: 1px solid colors.$magenta;
+                overflow: hidden;
             }
         }
     }
@@ -384,6 +453,11 @@ img, svg {
         padding-top: 4rem;
         padding-bottom: 12.5rem;
     }
+
+    @at-root .efekt-row[data-row="front-page-agenda"] #{&} {
+        padding-top: 10.25rem;
+        padding-bottom: 9rem;
+    }
 }
 
 @media (min-width: 992px) {
@@ -399,14 +473,19 @@ img, svg {
         &-p {
             @at-root .efekt-row[data-row="front-page-about-us"] #{&},
             .efekt-row[data-row="front-page-quote"] #{&},
-            .efekt-row[data-row="front-page-benefits"] #{&} {
-                max-width: 65rem;
+            .efekt-row[data-row="front-page-benefits"] #{&},
+            .efekt-row[data-row="front-page-agenda"] #{&} {
                 margin-left: auto;
                 margin-right: auto;
             }
 
+            @at-root .efekt-row[data-row="front-page-about-us"] #{&} {
+                max-width: 65rem;
+            }
+
             @at-root .efekt-row[data-row="front-page-quote"] #{&},
-            .efekt-row[data-row="front-page-benefits"] #{&} {
+            .efekt-row[data-row="front-page-benefits"] #{&},
+            .efekt-row[data-row="front-page-agenda"] #{&} {
                 max-width: 68rem;
             }
 
