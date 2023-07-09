@@ -72,7 +72,7 @@ img, svg {
             color: colors.$eggplant;
             font-size: 2rem;
 
-            &::before {
+            &::after {
                 display: none;
             }
         }
@@ -83,6 +83,23 @@ img, svg {
 
         @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
             color: colors.$flash;
+
+            &::after {
+                margin-top: .25rem;
+                background: colors.$flash;
+            }
+        }
+    }
+
+    &-h3 {
+        color: colors.$navy;
+        font-weight: fonts.$bold;
+        font-size: 1.75rem;
+
+        @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
+            color: colors.$flash;
+            margin-top: .8em;
+            margin-bottom: 1.1em;
         }
     }
 
@@ -196,9 +213,6 @@ img, svg {
                 }
             }
 
-            &:nth-child(n+2) {
-            }
-
             &:nth-child(2),
             &:nth-child(4) {
                 font-family: fonts.$hind;
@@ -230,6 +244,21 @@ img, svg {
                 margin-top: 1em;
                 font-size: 1.5rem;
                 font-weight: fonts.$extralight;
+            }
+        }
+
+        @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
+            font-family: fonts.$hind;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 2.25em;
+
+            &:last-child {
+                font-size: 1.75rem;
+                font-family: fonts.$montserrat;
+                font-weight: fonts.$bold;
+                line-height: 1.25;
+                margin-top: 2.75em;
             }
         }
     }
@@ -280,7 +309,9 @@ img, svg {
                 top: 0;
                 left: calc((100% - 100vw) / 2);
                 z-index: -1;
-
+                background-position-x: center;
+                background-repeat: no-repeat;
+                background-size: contain;
             }
         }
 
@@ -289,9 +320,17 @@ img, svg {
 
             &::before {
                 background-image: url('../../images/wave-top.svg');
-                background-position: center -1px;
-                background-repeat: no-repeat;
-                background-size: contain;
+                background-position-y: -1px;
+
+            }
+        }
+
+        &[data-row="front-page-benefits"] {
+            margin-bottom: 1.875rem;
+
+            &::before {
+                background-image: url('../../images/wave-bottom.svg');
+                background-position-y: calc(100% + 1px);
             }
         }
     }
@@ -340,6 +379,11 @@ img, svg {
     @at-root .efekt-row[data-row="front-page-quote"] #{&} {
         padding-top: 7.5rem;
     }
+
+    @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
+        padding-top: 4rem;
+        padding-bottom: 12.5rem;
+    }
 }
 
 @media (min-width: 992px) {
@@ -354,15 +398,19 @@ img, svg {
 
         &-p {
             @at-root .efekt-row[data-row="front-page-about-us"] #{&},
-            .efekt-row[data-row="front-page-quote"] #{&} {
+            .efekt-row[data-row="front-page-quote"] #{&},
+            .efekt-row[data-row="front-page-benefits"] #{&} {
                 max-width: 65rem;
                 margin-left: auto;
                 margin-right: auto;
             }
 
-            @at-root .efekt-row[data-row="front-page-quote"] #{&} {
-                max-width: 72rem;
+            @at-root .efekt-row[data-row="front-page-quote"] #{&},
+            .efekt-row[data-row="front-page-benefits"] #{&} {
+                max-width: 68rem;
+            }
 
+            @at-root .efekt-row[data-row="front-page-quote"] #{&} {
                 &:nth-child(4) {
                     max-width: 66rem;
                 }
