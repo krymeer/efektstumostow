@@ -126,7 +126,7 @@
                     <div class="col">
                         <p class="efekt-p"><span>„Rozwój osobisty to niekończący się proces samodoskonalenia”</span> powiedział niegdyś Zig Ziglar.</p>
                         <p class="efekt-p">Z nieukrywaną radością chcemy zaprosić Cię na wydarzenie, które będzie dla Ciebie <span>potężnym</span> bodźcem do dalszego samodoskonalenia i&nbsp;jednocześnie wspaniałym przeżyciem, które po latach będziesz wspominać z&nbsp;uśmiechem!</p>
-                        <p class="efekt-p">EFEKT STU MOSTÓW</p>
+                        <p class="efekt-p">Efekt Stu Mostów</p>
                         <p class="efekt-p">Już we wrześniu (8-10) odbędzie się wyczekiwana przez wszystkich Toastmasterów konferencja <span>Efekt Toastmasters</span>. Tym razem ugościmy Was w&nbsp;mieście stu mostów, malowniczym Wrocławiu. Wrocław nazywany jest miastem spotkań, ze względu na gościnną atmosferę oraz niepowtarzalny klimat. Nie może Cię więc zabraknąć.</p>
                         <p class="efekt-p">Spotkaj się z&nbsp;nami, aby chłonąć wiedzę i&nbsp;świetnie się bawić!</p>
                     </div>
@@ -200,19 +200,21 @@
                         <h3 class="efekt-h3">9 września</h3>
                         <p class="efekt-p">Będziesz mieć możliwość zobaczenia najlepszych mówców w&nbsp;ogólnopolskich finałach. Emocje i&nbsp;najwyższy poziom przemawiania gwarantowany. Ucz się od najlepszych!</p>
                         <h3 class="efekt-h3">10 września</h3>
-                        <p>Toastmasterzy znani są z&nbsp;tego, że potrafią się dobrze bawić. Chłoń klimat malowniczego Wrocławia w&nbsp;doborowym towarzystwie. Niezapomniane wrażenia Gwarantowane!</p>
+                        <p class="efekt-p">Toastmasterzy znani są z&nbsp;tego, że potrafią się dobrze bawić. Chłoń klimat malowniczego Wrocławia w&nbsp;doborowym towarzystwie. Niezapomniane wrażenia gwarantowane!</p>
                     </div>
                 </div>
                 <div class="row efekt-row" data-row="front-page-location">
                     <div class="col">
                         <h2 class="efekt-h2">Miejsce wydarzenia</h2>
                         <p class="efekt-p">Tegoroczne wydarzenie odbędzie się w&nbsp;malowniczym hotelu <span>Wyndham</span></p>
-                        <img src="images/location-1.png" alt="hotel wyndham 1">
-                        <img src="images/location-2.png" alt="hotel wyndham 2">
-                        <img src="images/location-3.png" alt="hotel wyndham 3">
-                        <img src="images/location-4.png" alt="hotel wyndham 4">
-                        <img src="images/location-5.png" alt="hotel wyndham 5">
-                        <img src="images/location-6.png" alt="hotel wyndham 6">
+                        <div>
+                            <img src="images/location-1.png" alt="hotel wyndham 1">
+                            <img src="images/location-2.png" alt="hotel wyndham 2">
+                            <img src="images/location-3.png" alt="hotel wyndham 3">
+                            <img src="images/location-4.png" alt="hotel wyndham 4">
+                            <img src="images/location-5.png" alt="hotel wyndham 5">
+                            <img src="images/location-6.png" alt="hotel wyndham 6">
+                        </div>
                         <img src="images/location-map.png" alt="hotel wyndham mapa">
                         <p class="efekt-p">Świętego Mikołaja 67, 50-127 Wrocław</p>
                     </div>
@@ -220,22 +222,30 @@
                 <div class="row efekt-row" data-row="front-page-conferences">
                     <div class="col">
                         <h2 class="efekt-h2">Poprzednie konferencje</h2>
-                        <img src="images/conference-1.png" alt="efekt zdjęcie">
-                        <img src="images/conference-2.png" alt="efekt zdjęcie">
-                        <img src="images/conference-3.png" alt="efekt zdjęcie">
-                        <img src="images/conference-4.png" alt="efekt zdjęcie">
-                        <img src="images/conference-5.png" alt="efekt zdjęcie">
-                        <h3 class="efekt-h3">Efekt Toastmasters 2021 <strong>Gdańsk</strong></h3>
-                        <a href="javascript:void(0)">obejrzyj na Youtube</a>
-                        <h3 class="efekt-h3">Efekt Toastmasters 2022 <strong>Warmia Efekt w&nbsp;Olsztynie</strong></h3>
-                        <a href="javascript:void(0)">obejrzyj na Youtube</a>
-                        <h3 class="efekt-h3">Efekt Toastmasters 2023 <strong>Piernikowy Efekt w&nbsp;Toruniu</strong></h3>
-                        <a href="javascript:void(0)">obejrzyj na Youtube</a>
+                        <div>
+                            <img src="images/conference-1.png" alt="efekt zdjęcie">
+                            <img src="images/conference-2.png" alt="efekt zdjęcie">
+                            <img src="images/conference-3.png" alt="efekt zdjęcie">
+                            <img src="images/conference-4.png" alt="efekt zdjęcie">
+                            <img src="images/conference-5.png" alt="efekt zdjęcie">
+                        </div>
+                        <div>
+                            <h3 class="efekt-h3">Efekt Toastmasters 2021 <strong>Gdańsk</strong></h3>
+                            <a href="javascript:void(0)">obejrzyj na Youtube</a>
+                        </div>
+                        <div>
+                            <h3 class="efekt-h3">Efekt Toastmasters 2022 <strong>Warmia Efekt w&nbsp;Olsztynie</strong></h3>
+                            <a href="javascript:void(0)">obejrzyj na Youtube</a>
+                        </div>
+                        <div>
+                            <h3 class="efekt-h3">Efekt Toastmasters 2023 <strong>Piernikowy Efekt w&nbsp;Toruniu</strong></h3>
+                            <a href="javascript:void(0)">obejrzyj na Youtube</a>
+                        </div>
                     </div>
                 </div>
                 <div class="row efekt-row" data-row="front-page-map">
                     <div class="col">
-                        <img src="images/map.svg" alt="mapa polski">
+                        <?= get_svg( 'images/map' ); ?>
                     </div>
                 </div>
             </main>
