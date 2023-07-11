@@ -62,6 +62,7 @@ img, svg {
             content: '';
             display: block;
             width: calc(100% + 2.5rem);
+            margin-top: .25rem;
             margin-left: -1.25rem;
             height: 1px;
             background: colors.$magenta;
@@ -87,16 +88,51 @@ img, svg {
             color: colors.$flash;
 
             &::after {
-                margin-top: .25rem;
                 background: colors.$flash;
             }
         }
 
         @at-root .efekt-row[data-row="front-page-speakers"] #{&} {
             margin-bottom: 2.175em;
+        }
 
-            &::after {
-                margin-top: .25rem;
+        @at-root .efekt-row[data-row="front-page-location"] #{&} {
+            margin-bottom: 1.95em;
+        }
+
+        @at-root .efekt-row[data-row="front-page-conferences"] #{&} {
+            + div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 1rem;
+                margin-bottom: 4.25rem;
+
+                img {
+                    flex: 0 0 calc(100% / 3);
+                    max-width: calc(100% / 3);
+                    cursor: pointer;
+                    padding: .825rem;
+                    margin: 0;
+                }
+
+                ~ div {
+                    &::before {
+                        @include mixins.line;
+                    }
+
+                    &:last-of-type {
+                        &::after {
+                            @include mixins.line;
+                        }
+                    }
+
+                    &::before,
+                    &:last-of-type::after {
+                        width: 89%;
+                        margin: 1.5em auto 2em;
+                    }
+                }
             }
         }
     }
@@ -130,6 +166,29 @@ img, svg {
                     height: 1px;
                     background: colors.$white;
                     margin-bottom: 1em;
+                }
+            }
+        }
+
+        @at-root .efekt-row[data-row="front-page-conferences"] #{&} {
+            font-weight: fonts.$regular;
+            font-size: 1.5rem;
+            color: colors.$eggplant;
+            margin-bottom: .1em;
+
+            strong {
+                display: block;
+                font-size: 1.75rem;
+                font-weight: fonts.$bold;
+                margin-top: .25em;
+            }
+
+            + a {
+                font-size: 1.25rem;
+                color: colors.$magenta;
+
+                &:hover {
+                    text-decoration: none;
                 }
             }
         }
@@ -287,9 +346,6 @@ img, svg {
             margin-bottom: 2.25em;
         }
 
-        @at-root .efekt-row[data-row="front-page-agenda"] #{&} {
-        }
-
         @at-root .efekt-row[data-row="front-page-benefits"] #{&} {
             &:last-child {
                 font-size: 1.75rem;
@@ -304,6 +360,18 @@ img, svg {
             font-family: fonts.$hind;
             font-size: 1.25rem;
             line-height: 1.5875;
+        }
+
+        @at-root .efekt-row[data-row="front-page-location"] #{&} {
+            margin-bottom: 3em;
+
+            span {
+                font-weight: fonts.$medium;
+            }
+        }
+
+        @at-root .efekt-row[data-row="front-page-location"] img + #{&} {
+            margin-top: 1em;
         }
     }
 
@@ -380,6 +448,34 @@ img, svg {
         &[data-row="front-page-speakers"] {
             text-align: center;
             margin-top: 2.5rem;
+        }
+
+        &[data-row="front-page-location"],
+        &[data-row="front-page-conferences"] {
+            text-align: center;
+        }
+
+        &[data-row="front-page-location"] {
+            margin-top: 41rem;
+
+            div div {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                grid-auto-flow: row;
+                place-content: center;
+                grid-gap: 2.125rem;
+                margin: 0 -2.125rem 0;
+
+                + img {
+                    margin-top: 4.5rem;
+                }
+            }
+        }
+
+        &[data-row="front-page-conferences"] {
+            div div {
+
+            }
         }
     }
 
@@ -492,6 +588,16 @@ img, svg {
             @at-root .efekt-row[data-row="front-page-quote"] #{&} {
                 &:nth-child(4) {
                     max-width: 66rem;
+                }
+            }
+        }
+
+        &-row {
+            &[data-row="front-page-conferences"] {
+                div div {
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 72rem;
                 }
             }
         }

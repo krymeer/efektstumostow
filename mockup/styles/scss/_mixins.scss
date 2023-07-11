@@ -1,5 +1,13 @@
 @use 'colors';
 
+@mixin line {
+    content: '';
+    display: block;
+    height: 1px;
+    background: colors.$magenta;
+    width: 100%;
+}
+
 @mixin wave {
     width: 100vw;
     height: 100%;
